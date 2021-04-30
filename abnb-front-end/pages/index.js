@@ -1,7 +1,28 @@
-export default function Home() {
-  return (
-    <div>
-      <h3>Hello</h3>
-    </div>
-  );
-}
+import { sanityClient } from "../sanity";
+
+const Home = ({ properties }) => {
+  console.log(properties);
+  return <></>;
+};
+
+export const getServerSideProps = async () => {
+  const query = '*[ _type == "property"]';
+  const properties = await sanityClient.fetch(query);
+  console.log(properties);
+
+  if (!properties.length) {
+    return {
+      props: {
+        properties: [],
+      },
+    };
+  } else {
+    return {
+      props: {
+        properties,
+      },
+    };
+  }
+};
+
+export default Home;
