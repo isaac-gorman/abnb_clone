@@ -15,7 +15,7 @@ const Property = ({
   reviews,
 }) => {
   return (
-    <div>
+    <div className="container">
       <h1>
         <b>{title}</b>
       </h1>
@@ -27,6 +27,36 @@ const Property = ({
       <h4>
         {bedrooms} bedroom{isMultiple(bedrooms)} * {beds} bed{isMultiple(beds)}
       </h4>
+      <h4>
+        <b>Enhanced Clean</b>
+      </h4>
+      <p>
+        LOREM IPSUM GENERATOR Lorem ipsum dolor sit amet, consectetur
+        adipiscing.
+      </p>
+      <h4>
+        <b>Amenities for everyday living</b>
+      </h4>
+      <p>
+        LOREM IPSUM GENERATOR Lorem ipsum dolor sit amet, consectetur
+        adipiscing.
+      </p>
+      <h4>
+        <b>House Rules</b>
+      </h4>
+      <p>
+        LOREM IPSUM GENERATOR Lorem ipsum dolor sit amet, consectetur
+        adipiscing.
+      </p>
+      <div className="price-box">
+        <h2>${pricePerNight}</h2>
+        <h4>
+          {reviews.length} review{isMultiple(reviews.length)}
+        </h4>
+        <div className="button" onClick={() => {}}>
+          Change Dates
+        </div>
+      </div>
     </div>
   );
 };
